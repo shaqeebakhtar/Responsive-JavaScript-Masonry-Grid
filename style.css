@@ -1,0 +1,83 @@
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  font-family: "Space Mono", monospace;
+  line-height: 1.5;
+  background-color: #111111;
+  color: #dfdfdf;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+  filter: grayscale(50%);
+}
+
+/* styling */
+
+.logo {
+  mix-blend-mode: difference;
+}
+
+.header {
+  position: fixed;
+  z-index: 99;
+  top: 0;
+  padding: 0.5rem 1.5rem;
+}
+
+.grid {
+  position: relative;
+  display: flex;
+  gap: 0.75rem;
+  width: 100%;
+  padding: 4em 1.5em;
+}
+
+.column {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.post {
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.post-count {
+  font-size: 3rem;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: #1e1e1e;
+  display: grid;
+  place-items: center;
+  opacity: 0;
+  transition: opacity 100ms ease-in;
+}
+
+.post:hover .overlay {
+  opacity: 0.9;
+}
